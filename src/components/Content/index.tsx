@@ -1,9 +1,10 @@
-import { useMovies } from '../MoviesContext';
+import { useMovies } from '../../MoviesContext';
 import { MovieCard } from './MovieCard';
-import '../styles/content.scss';
+import { memo } from 'react';
+import '../../styles/content.scss';
 
 
-export function Content() {
+function ContentComponent() {
   const { selectedGenre, movies } = useMovies();
 
   return (
@@ -22,3 +23,6 @@ export function Content() {
     </div>
   )
 }
+
+export const Content = memo(ContentComponent);
+

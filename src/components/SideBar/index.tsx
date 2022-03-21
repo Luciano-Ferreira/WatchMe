@@ -1,14 +1,16 @@
-import { useMovies } from '../MoviesContext';
-import { Button } from '../components/Button';
-import '../styles/sidebar.scss';
+import { useMovies } from '../../MoviesContext';
+import { Button } from './Button';
+import { Header } from './Header';
+
+
+import '../../styles/sidebar.scss';
 
 
 export function SideBar() {
   const { handleClickButton, genres, selectedGenreId } = useMovies();
   return (
     <nav className="sidebar">
-      <span>Watch<p>Me</p></span>
-
+      <Header />
       <div className="buttons-container">
         {genres.map(genre => (
           <Button
